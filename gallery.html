@@ -7,34 +7,38 @@
 <link rel="stylesheet" href="style.css">
 <script src="translations.js"></script>
 <script src="artworks.js"></script>
+<script src="i18n.js"></script>
 </head>
 <body>
 <nav>
-<a href="index.html">Atelier</a>
-<a href="gallery.html">Gallery</a>
-<a href="about.html">Artist</a>
-<a href="philosophy.html">Vision</a>
-<a href="journal.html">Journal</a>
+<a href="index.html" data-i18n="atelier">Atelier</a>
+<a href="gallery.html" data-i18n="gallery">Gallery</a>
+<a href="about.html" data-i18n="artist">Artist</a>
+<a href="philosophy.html" data-i18n="vision">Vision</a>
+<a href="journal.html" data-i18n="journal">Journal</a>
+<select id="languageSelector" onchange="changeLanguage(this.value)">
+<option value="en">English</option><option value="ar">العربية</option><option value="de">Deutsch</option><option value="it">Italiano</option><option value="ru">Русский</option><option value="zh">中文</option><option value="es">Español</option><option value="fr">Français</option><option value="nl">Nederlands</option><option value="ja">日本語</option><option value="el">Ελληνικά</option>
+</select>
 </nav>
 <main>
-<h1>The Collection</h1>
+<h1 data-i18n="gallery">The Collection</h1>
 <p class="subtitle">A multilingual exhibition of memories, ideas, and painted worlds.</p>
 <section class="gallery">
 <article class="art-card">
 <div class="frame"><span>Artwork I</span></div>
-<h2 id="artTitle">The Silent Garden</h2>
-<p id="artDetails">Oil on canvas · 2026</p>
-<p id="artStory">A quiet landscape of memory, solitude, and hidden conversations.</p>
-<a href="artwork-silent-garden.html">Enter Exhibition Room →</a>
+<h2 id="artTitle"></h2>
+<p id="artDetails"></p>
+<p id="artStory"></p>
+<a href="artwork-silent-garden.html" data-i18n="button">Enter Exhibition Room →</a>
 </article>
 </section>
 </main>
 <script>
 const lang=localStorage.getItem('basharLanguage')||'en';
 const art=artworks.silentGarden[lang]||artworks.silentGarden.en;
-document.getElementById('artTitle').textContent=art.title;
-document.getElementById('artDetails').textContent=art.details;
-document.getElementById('artStory').textContent=art.story;
+artTitle.textContent=art.title;
+artDetails.textContent=art.details;
+artStory.textContent=art.story;
 </script>
 </body>
 </html>
