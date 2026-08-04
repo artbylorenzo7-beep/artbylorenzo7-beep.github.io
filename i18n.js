@@ -11,6 +11,7 @@ function applyTranslations(){
  if(selector) selector.value=lang;
 }
 function changeLanguage(lang){
+ if(lang!=='en' && lang!=='ar') lang='en';
  localStorage.setItem('basharLanguage',lang);
  location.reload();
 }
