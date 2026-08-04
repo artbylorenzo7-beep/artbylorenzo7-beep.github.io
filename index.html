@@ -8,19 +8,18 @@
 <body>
 <div class="brush"></div>
 <header class="hero">
+<select class="language" onchange="setLanguage(this.value)">
+<option value="en">English</option><option value="ar">العربية</option><option value="de">Deutsch</option><option value="it">Italiano</option><option value="ru">Русский</option><option value="zh">中文</option><option value="es">Español</option><option value="fr">Français</option><option value="nl">Nederlands</option><option value="ja">日本語</option><option value="el">Ελληνικά</option>
+</select>
 <nav>
-<a href="index.html">Atelier</a><a href="gallery.html">Gallery</a><a href="about.html">Artist</a><a href="philosophy.html">Vision</a><a href="journal.html">Journal</a>
+<a data-i18n="atelier" href="index.html">Atelier</a><a data-i18n="gallery" href="gallery.html">Gallery</a><a data-i18n="artist" href="about.html">Artist</a><a data-i18n="vision" href="philosophy.html">Vision</a><a data-i18n="journal" href="journal.html">Journal</a>
 </nav>
 <div class="signature">Bashar Al-Taweel</div>
-<h1>Bashar's Atelier</h1>
-<p class="subtitle">A sanctuary of paintings, stories, and timeless artistic exploration.</p>
-<a class="enter" href="gallery.html">Enter the Collection</a>
+<h1 data-i18n="title">Bashar's Atelier</h1>
+<p data-i18n="subtitle" class="subtitle">A sanctuary of paintings, stories, and timeless artistic exploration.</p>
+<a data-i18n="button" class="enter" href="gallery.html">Enter the Collection</a>
 </header>
-<main>
-<section class="welcome"><h2>The Digital Atelier</h2><p>A living museum where every artwork carries a memory, a question, and a fragment of the artist's journey.</p></section>
-<section class="rooms"><article><h3>🖼️ Gallery</h3><p>Walk through the collection.</p><a href="gallery.html">Open Gallery →</a></article><article><h3>📜 Philosophy</h3><p>Explore the ideas behind the brush.</p><a href="philosophy.html">Read Vision →</a></article><article><h3>✒️ Journal</h3><p>Enter the artist's notebook.</p><a href="journal.html">Open Journal →</a></article></section>
-</main>
+<main><section class="welcome"><h2>The Digital Atelier</h2><p>A living museum where every artwork carries a memory, a question, and a fragment of the artist's journey.</p></section></main>
 <footer>© 2026 Bashar's Atelier • Bashar Al-Taweel</footer>
-<script src="script.js"></script>
-</body>
-</html>
+<script src="translations.js"></script><script src="script.js"></script>
+</body></html>
