@@ -3,32 +3,38 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Gallery | Bashar's Atelier</title>
+<title>Bashar's Atelier | Gallery</title>
 <link rel="stylesheet" href="style.css">
+<script src="translations.js"></script>
+<script src="artworks.js"></script>
 </head>
 <body>
 <nav>
-<a href="index.html">Home</a>
+<a href="index.html">Atelier</a>
 <a href="gallery.html">Gallery</a>
-<a href="about.html">About</a>
+<a href="about.html">Artist</a>
+<a href="philosophy.html">Vision</a>
 <a href="journal.html">Journal</a>
 </nav>
 <main>
 <h1>The Collection</h1>
-<p class="subtitle">A private exhibition of memories, ideas, and painted worlds.</p>
+<p class="subtitle">A multilingual exhibition of memories, ideas, and painted worlds.</p>
 <section class="gallery">
 <article class="art-card">
 <div class="frame"><span>Artwork I</span></div>
-<h2>The Silent Garden</h2>
-<p>Oil on canvas · 2026</p>
+<h2 id="artTitle">The Silent Garden</h2>
+<p id="artDetails">Oil on canvas · 2026</p>
+<p id="artStory">A quiet landscape of memory, solitude, and hidden conversations.</p>
 <a href="artwork-silent-garden.html">Enter Exhibition Room →</a>
-</article>
-<article class="art-card">
-<div class="frame"><span>Artwork II</span></div>
-<h2>Untitled Study</h2>
-<p>Coming soon</p>
 </article>
 </section>
 </main>
+<script>
+const lang=localStorage.getItem('basharLanguage')||'en';
+const art=artworks.silentGarden[lang]||artworks.silentGarden.en;
+document.getElementById('artTitle').textContent=art.title;
+document.getElementById('artDetails').textContent=art.details;
+document.getElementById('artStory').textContent=art.story;
+</script>
 </body>
 </html>
