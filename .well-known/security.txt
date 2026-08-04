@@ -1,0 +1,4 @@
+Contact: mailto:security@basharsatelier.com
+Expires: 2027-08-05
+Preferred-Languages: en
+Canonical: https://artbylorenzo7-beep.github.io/.well-known/security.txt
