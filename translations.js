@@ -1,5 +1,5 @@
 const translations={
- en:{atelier:"Atelier",gallery:"Gallery",artist:"Artist",vision:"Vision",journal:"Journal",title:"Bashar's Atelier",subtitle:"A sanctuary of paintings, stories, and timeless artistic exploration.",button:"Enter the Collection",collection:"The Collection",story:"Story Behind The Piece",medium:"Medium",year:"Year",home:"Home",exhibition:"Enter Exhibition Room"},
- ar:{atelier:"المرسم",gallery:"المعرض",artist:"الفنان",vision:"الرؤية",journal:"اليوميات الفنية",title:"مرسم بشار",subtitle:"مساحة فنية تحتضن اللوحات والقصص ورحلة البحث عن الجمال عبر الزمن.",button:"ادخل إلى المجموعة الفنية",collection:"المجموعة الفنية",story:"قصة العمل الفني",medium:"الخامة",year:"السنة",home:"الرئيسية",exhibition:"ادخل إلى قاعة العرض"}
+ en:{atelier:"Atelier",gallery:"Gallery",artist:"Artist",vision:"Vision",journal:"Journal",title:"Bashar's Atelier",subtitle:"A sanctuary of paintings, memories, and timeless artistic exploration.",button:"Enter the Collection",collection:"The Collection",story:"Story Behind The Piece",medium:"Medium",year:"Year",home:"Home",exhibition:"Enter Exhibition Room"},
+ ar:{atelier:"المرسم",gallery:"المعرض",artist:"الفنان",vision:"الرؤية",journal:"اليوميات الفنية",title:"مرسم بشار",subtitle:"مساحة فنية تحتضن اللوحات والذكريات ورحلة البحث عن الجمال الخالد.",button:"استكشف المجموعة الفنية",collection:"المجموعة الفنية",story:"قصة العمل الفني",medium:"الخامة",year:"السنة",home:"الرئيسية",exhibition:"ادخل إلى قاعة العرض"}
 };
 function setLanguage(lang){localStorage.setItem('basharLanguage',lang);location.reload();}
