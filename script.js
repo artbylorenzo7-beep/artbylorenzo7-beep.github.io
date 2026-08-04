@@ -1,3 +1,1 @@
-document.addEventListener('DOMContentLoaded', () => {
- console.log('Welcome to the digital atelier ✨');
-});
+document.addEventListener('DOMContentLoaded',()=>{document.body.classList.add('loaded');const links=document.querySelectorAll('a');links.forEach(link=>{link.addEventListener('click',()=>document.body.classList.add('leaving'));});console.log("Welcome to Bashar's Atelier 🖌️");});
