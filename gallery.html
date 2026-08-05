@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Bashar's Atelier | Gallery</title>
-<meta name="description" content="Explore the curated collection of Bashar Al-Taweel's artworks, stories, and artistic worlds.">
+<meta name="description" content="Explore Bashar Al-Taweel's curated collection of paintings, stories, and artistic worlds.">
 <link rel="stylesheet" href="style.css">
 <script src="artworks.js" defer></script>
 </head>
@@ -18,32 +18,34 @@
 </nav>
 <main>
 <h1>The Collection</h1>
-<p class="subtitle">A curated journey through memories, ideas, and painted worlds.</p>
-
-<section class="gallery rooms" aria-label="Artwork collection">
-<article class="art-card exhibition-card">
-<a href="artwork-silent-garden.html" aria-label="Enter The Silent Garden exhibition room">
-<div class="artwork-media" aria-hidden="true">
-<picture>
-<source srcset="assets/artworks/silent-garden/silent-garden.avif" type="image/avif">
-<source srcset="assets/artworks/silent-garden/silent-garden.webp" type="image/webp">
-<img loading="lazy" src="assets/artworks/silent-garden/preview.jpg" alt="The Silent Garden artwork preview">
-</picture>
-</div>
-</a>
-<div class="frame">
-<span>Artwork I</span>
-</div>
-<h2 id="artTitle">The Silent Garden</h2>
-<p id="artDetails">Oil on canvas · 2026</p>
-<p id="artStory">A quiet landscape of memory, solitude, and the hidden conversations between nature and the human soul.</p>
-<a class="enter" href="artwork-silent-garden.html">Enter Exhibition Room →</a>
-</article>
-</section>
+<p class="subtitle">A living archive of memories, ideas, and painted worlds.</p>
+<section class="gallery rooms" id="gallery" aria-label="Artwork collection"></section>
 </main>
 <script>
-const images=document.querySelectorAll('.artwork-media img');
-images.forEach(img=>{img.addEventListener('load',()=>img.classList.add('loaded'));});
+const gallery=document.getElementById('gallery');
+artworks.forEach((artwork)=>{
+ gallery.innerHTML += `
+ <article class="art-card exhibition-card">
+  <a href="artwork-${artwork.id}.html" aria-label="Enter ${artwork.title} exhibition room">
+   <div class="artwork-media">
+    <picture>
+     <source srcset="${artwork.images.avif}" type="image/avif">
+     <source srcset="${artwork.images.webp}" type="image/webp">
+     <img loading="lazy" src="${artwork.images.fallback}" alt="${artwork.title} artwork preview">
+    </picture>
+   </div>
+  </a>
+  <div class="frame">Artwork</div>
+  <h2>${artwork.title}</h2>
+  <p>${artwork.details}</p>
+  <p>${artwork.story}</p>
+  <a class="enter" href="artwork-${artwork.id}.html">Enter Exhibition Room →</a>
+ </article>`;
+});
+
+document.querySelectorAll('.artwork-media img').forEach(img=>{
+ img.addEventListener('load',()=>img.classList.add('loaded'));
+});
 </script>
 </body>
 </html>
