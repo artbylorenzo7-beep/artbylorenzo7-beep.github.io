@@ -1,15 +1,33 @@
-document.addEventListener('DOMContentLoaded',()=>{
+(function(){
  const saved=localStorage.getItem('atelier-theme');
- if(saved==='light') document.body.classList.add('light-theme');
- const button=document.createElement('button');
- button.className='theme-toggle';
- button.setAttribute('aria-label','Toggle atelier theme');
- button.textContent=document.body.classList.contains('light-theme')?'Moon Gallery':'Sun Gallery';
- document.querySelector('nav')?.appendChild(button);
- button.addEventListener('click',()=>{
-  document.body.classList.toggle('light-theme');
-  const light=document.body.classList.contains('light-theme');
-  localStorage.setItem('atelier-theme',light?'light':'dark');
-  button.textContent=light?'Moon Gallery':'Sun Gallery';
+ if(saved==='light') document.documentElement.classList.add('light-theme');
+ else document.documentElement.classList.add('dark-theme');
+
+ document.addEventListener('DOMContentLoaded',()=>{
+  const button=document.querySelector('.theme-toggle') || (()=>{
+   const nav=document.querySelector('nav');
+   if(!nav) return null;
+   const b=document.createElement('button');
+   b.className='theme-toggle';
+   b.type='button';
+   b.setAttribute('aria-label','Toggle atelier lighting');
+   nav.appendChild(b);
+   return b;
+  })();
+
+  const updateLabel=()=>{
+   if(button) button.textContent=document.documentElement.classList.contains('light-theme')?'🌙 Moon Gallery':'☀️ Sun Gallery';
+  };
+
+  updateLabel();
+
+  if(button){
+   button.addEventListener('click',()=>{
+    document.documentElement.classList.toggle('light-theme');
+    document.documentElement.classList.toggle('dark-theme');
+    localStorage.setItem('atelier-theme',document.documentElement.classList.contains('light-theme')?'light':'dark');
+    updateLabel();
+   });
+  }
  });
-});
+})();
