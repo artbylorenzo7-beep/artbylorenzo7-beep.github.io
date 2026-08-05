@@ -2,11 +2,13 @@
 html{scroll-behavior:smooth}
 :root{--bg:#0f0c09;--surface:#17110c;--text:#eadcc5;--muted:#cbb89b;--gold:#c9a66b;--border:#5b4630;--shadow:#000;--frame:#2b2117}
 body.light-theme{--bg:#efe4d2;--surface:#e4d3ba;--text:#3b2a1c;--muted:#66513b;--gold:#9b6b2f;--border:#b08a55;--shadow:rgba(66,45,25,.22);--frame:#d1b78e}
-body{margin:0;background:var(--bg);color:var(--text);font-family:Georgia,'Times New Roman',serif;line-height:1.8;overflow-x:hidden;-webkit-font-smoothing:antialiased;text-rendering:optimizeLegibility;transition:background 1s ease,color 1s ease}
+body{margin:0;background:var(--bg);color:var(--text);font-family:Georgia,'Times New Roman',serif;line-height:1.8;overflow-x:hidden;-webkit-font-smoothing:antialiased;text-rendering:optimizeLegibility}
+body.theme-changing{transition:background 1s ease,color 1s ease}
+body.theme-changing *{transition:background 1s ease,color 1s ease,border-color 1s ease!important}
+body:not(.theme-changing),body:not(.theme-changing) *{transition:none!important}
 body:before{content:'';position:fixed;inset:0;background:radial-gradient(circle at 50% 20%,rgba(201,166,107,.12),transparent 45%);pointer-events:none;z-index:-1}
 img{max-width:100%;height:auto;display:block;object-fit:cover}
 header,section,footer,main{max-width:1200px;margin:auto;padding:40px 24px}
-.hero{min-height:95vh;display:flex;flex-direction:column;justify-content:center;align-items:center;text-align:center}
 nav{padding:25px;border-bottom:1px solid var(--border);text-align:center}
 nav a{color:var(--gold);margin:15px;text-decoration:none;transition:.3s ease;display:inline-block}
 nav a:hover,nav a:focus{transform:translateY(-3px)}
