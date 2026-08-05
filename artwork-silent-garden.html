@@ -4,32 +4,34 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>The Silent Garden | Bashar's Atelier</title>
+<meta name="description" content="The Silent Garden, an artwork by Bashar Al-Taweel. Explore the story, medium, and creative reflection behind the piece.">
 <link rel="stylesheet" href="style.css">
-<script src="translations.js"></script>
 <script src="artworks.js"></script>
-<script src="i18n.js"></script>
 </head>
 <body>
 <nav>
-<a href="index.html" data-i18n="atelier">Atelier</a>
-<a href="gallery.html" data-i18n="gallery">Gallery</a>
-<select id="languageSelector" onchange="changeLanguage(this.value)">
-<option value="en">English</option><option value="ar">العربية</option><option value="de">Deutsch</option><option value="it">Italiano</option><option value="ru">Русский</option><option value="zh">中文</option><option value="es">Español</option><option value="fr">Français</option><option value="nl">Nederlands</option><option value="ja">日本語</option><option value="el">Ελληνικά</option>
-</select>
+<a href="index.html">Atelier</a>
+<a href="gallery.html">Gallery</a>
+<a href="about.html">Artist</a>
+<a href="philosophy.html">Vision</a>
+<a href="journal.html">Journal</a>
 </nav>
 <main class="artwork-page">
 <h1 id="artTitle"></h1>
-<div class="artwork-viewer" onclick="this.classList.toggle('fullscreen')"><span>Artwork Image Space</span></div>
+<div class="artwork-viewer" onclick="this.classList.toggle('fullscreen')" role="button" tabindex="0" aria-label="Open artwork fullscreen">
+<picture>
+<img loading="lazy" src="assets/artworks/silent-garden/preview.jpg" alt="The Silent Garden artwork by Bashar Al-Taweel">
+</picture>
+</div>
 <section class="story">
-<h2 data-i18n="story">Story Behind The Piece</h2>
+<h2>Story Behind The Piece</h2>
 <p id="artStory"></p>
-<p><strong data-i18n="medium">Medium:</strong> <span id="artMedium"></span></p>
-<p><strong data-i18n="year">Year:</strong> <span id="artYear"></span></p>
+<p><strong>Medium:</strong> <span id="artMedium"></span></p>
+<p><strong>Year:</strong> <span id="artYear"></span></p>
 </section>
 </main>
 <script>
-const lang=localStorage.getItem('basharLanguage')||'en';
-const art=artworks.silentGarden[lang]||artworks.silentGarden.en;
+const art=artworks.silentGarden.en;
 artTitle.textContent=art.title;
 artStory.textContent=art.story;
 artMedium.textContent=art.medium||art.details;
