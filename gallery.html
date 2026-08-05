@@ -4,9 +4,9 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Bashar's Atelier | Gallery</title>
-<meta name="description" content="Explore the collection of Bashar Al-Taweel's artworks and their stories.">
+<meta name="description" content="Explore the curated collection of Bashar Al-Taweel's artworks, stories, and artistic worlds.">
 <link rel="stylesheet" href="style.css">
-<script src="artworks.js"></script>
+<script src="artworks.js" defer></script>
 </head>
 <body>
 <nav>
@@ -18,22 +18,32 @@
 </nav>
 <main>
 <h1>The Collection</h1>
-<p class="subtitle">A collection of memories, ideas, and painted worlds.</p>
-<section class="gallery">
-<article class="art-card">
-<div class="frame"><span>Artwork I</span></div>
-<h2 id="artTitle"></h2>
-<p id="artDetails"></p>
-<p id="artStory"></p>
-<a href="artwork-silent-garden.html">Enter Exhibition Room →</a>
+<p class="subtitle">A curated journey through memories, ideas, and painted worlds.</p>
+
+<section class="gallery rooms" aria-label="Artwork collection">
+<article class="art-card exhibition-card">
+<a href="artwork-silent-garden.html" aria-label="Enter The Silent Garden exhibition room">
+<div class="artwork-media" aria-hidden="true">
+<picture>
+<source srcset="assets/artworks/silent-garden/silent-garden.avif" type="image/avif">
+<source srcset="assets/artworks/silent-garden/silent-garden.webp" type="image/webp">
+<img loading="lazy" src="assets/artworks/silent-garden/preview.jpg" alt="The Silent Garden artwork preview">
+</picture>
+</div>
+</a>
+<div class="frame">
+<span>Artwork I</span>
+</div>
+<h2 id="artTitle">The Silent Garden</h2>
+<p id="artDetails">Oil on canvas · 2026</p>
+<p id="artStory">A quiet landscape of memory, solitude, and the hidden conversations between nature and the human soul.</p>
+<a class="enter" href="artwork-silent-garden.html">Enter Exhibition Room →</a>
 </article>
 </section>
 </main>
 <script>
-const art=artworks.silentGarden.en;
-artTitle.textContent=art.title;
-artDetails.textContent=art.details;
-artStory.textContent=art.story;
+const images=document.querySelectorAll('.artwork-media img');
+images.forEach(img=>{img.addEventListener('load',()=>img.classList.add('loaded'));});
 </script>
 </body>
 </html>
