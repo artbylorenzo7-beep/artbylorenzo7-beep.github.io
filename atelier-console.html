@@ -8,10 +8,24 @@
 </head>
 <body>
 <main class="console">
+<section id="login-room" class="auth-room">
+<p class="label">Private Curator Wing</p>
+<h1>Unlock the Atelier</h1>
+<p>Authorized artists and collaborators only.</p>
+<form id="login-form">
+<input id="email" type="email" placeholder="Email" required>
+<input id="password" type="password" placeholder="Password" required>
+<button type="submit">Enter Atelier</button>
+</form>
+<p id="auth-message"></p>
+</section>
+
+<section id="console-room" class="hidden">
 <header>
 <p class="label">Private Curator Wing</p>
 <h1>Atelier Console</h1>
 <p>Welcome to the hidden studio control room.</p>
+<button id="logout">Lock Atelier</button>
 </header>
 <section class="rooms">
 <article><h2>🖼 Artwork Vault</h2><p>Create, edit and organize artworks.</p><button>Open Vault</button></article>
@@ -19,6 +33,7 @@
 <article><h2>🏛 Exhibition Hall</h2><p>Arrange collections and featured works.</p><button>Open Hall</button></article>
 <article><h2>🎨 Appearance Studio</h2><p>Manage the atelier identity.</p><button>Open Studio</button></article>
 <article><h2>👥 Access Room</h2><p>Manage collaborators and roles.</p><button>Open Room</button></article>
+</section>
 </section>
 </main>
 <script src="atelier-console.js"></script>
