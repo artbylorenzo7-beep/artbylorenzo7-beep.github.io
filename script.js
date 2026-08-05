@@ -24,12 +24,4 @@ document.addEventListener('DOMContentLoaded',()=>{
   updateThemeLabel();
   setTimeout(()=>document.body.classList.remove('theme-changing'),1000);
  });
-
- document.querySelectorAll('a').forEach(link=>{
-  link.addEventListener('click',()=>{
-   if(link.hostname===location.hostname && !link.href.includes('#')){
-    document.body.classList.add('leaving');
-   }
-  });
- });
 });
