@@ -64,6 +64,13 @@ logoutButton?.addEventListener('click', async () => {
 });
 
 initSupabase();
+
+if (supabaseClient) {
+  console.log("Supabase connected successfully");
+} else {
+  console.error("Supabase failed to initialize");
+}
+
 showLogin();
 
 console.log('Atelier Authentication System ready');
