@@ -54,8 +54,34 @@ loginForm?.addEventListener('submit', async (event) => {
     return;
   }
 
-  message.textContent = 'Welcome back to the Atelier.';
-  showConsole();
+  const { data: { user } } = await supabaseClient.auth.getUser();
+
+if (!user) {
+  message.textContent = "User verification failed.";
+  return;
+}
+
+const { data: profile, error: profileError } = await supabaseClient
+  .from('profiles')
+  .select('*')
+  .eq('id', user.id)
+  .single();
+
+if (profileError || !profile) {
+  message.textContent = "Profile not found.";
+  return;
+}
+
+console.log("Logged in user:", user);
+console.log("Profile:", profile);
+
+if (profile.role !== "owner") {
+  message.textContent = "Access level insufficient.";
+  return;
+}
+
+message.textContent = `Welcome ${profile.role} back to the Atelier.`;
+showConsole();
 });
 
 logoutButton?.addEventListener('click', async () => {
