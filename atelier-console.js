@@ -3,8 +3,8 @@
 // Add your public Supabase URL and anon key in the configuration below.
 // Never place the service role key in this file.
 
-const SUPABASE_URL = 'YOUR_SUPABASE_URL';
-const SUPABASE_ANON_KEY = 'YOUR_SUPABASE_ANON_KEY';
+const SUPABASE_URL = 'https://wbcflulqaokpuejvwvyh.supabase.co';
+const SUPABASE_ANON_KEY = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6IndiY2ZsdWxxYW9rcHVlanZ3dnloIiwicm9sZSI6ImFub24iLCJpYXQiOjE3ODU5NjE5MjUsImV4cCI6MjEwMTUzNzkyNX0.d-r8Yk386tjBbwdTlX-Pd5-SnTu92e_3GAm24ha_6Nw';
 
 const loginForm = document.getElementById('login-form');
 const loginRoom = document.getElementById('login-room');
